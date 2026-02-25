@@ -9,14 +9,6 @@ The result can be slightly differ from what stated in the paper.
 ## Install
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -e .
-```
-
-## Install and Run with uv
-
-```bash
 uv sync
 ```
 
@@ -74,7 +66,7 @@ For raw CompCars, class labels are read from the first line in each file under `
 ## Train
 
 ```bash
-vonet-train \
+uv run vonet-train \
   --data-root data \
   --epochs 30 \
   --lr 0.001 \
@@ -88,7 +80,7 @@ vonet-train \
 Resume from the last checkpoint:
 
 ```bash
-vonet-train \
+uv run vonet-train \
   --data-root data \
   --epochs 30 \
   --resume artifacts/vonet/last.pt \
@@ -103,7 +95,7 @@ Notes:
 Apple Silicon (M4/MPS):
 
 ```bash
-vonet-train \
+uv run vonet-train \
   --data-root data \
   --device mps \
   --num-workers 0
@@ -112,13 +104,13 @@ vonet-train \
 ## Inference
 
 ```bash
-vonet-infer --checkpoint artifacts/vonet/best.pt --image sample.jpg --device auto
+uv run vonet-infer --checkpoint artifacts/vonet/best.pt --image sample.jpg --device auto
 ```
 
 ## Benchmark Inference
 
 ```bash
-vonet-benchmark \
+uv run vonet-benchmark \
   --checkpoint artifacts/vonet/best.pt \
   --device auto \
   --batch-size 1 \
@@ -129,5 +121,9 @@ vonet-benchmark \
 Apple Silicon:
 
 ```bash
-vonet-benchmark --checkpoint artifacts/vonet/best.pt --device mps --runs 500
+uv run vonet-benchmark --checkpoint artifacts/vonet/best.pt --device mps --runs 500
 ```
+
+## License
+
+MIT. See `LICENSE`.
