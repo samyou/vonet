@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vonet"
+version = "0.1.0"
+description = "PyTorch reproduction of VoNet for vehicle orientation classification"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.24",
+    "pillow>=10.0",
+    "setuptools>=82.0.0",
+    "torch>=2.2",
+    "torchvision>=0.17",
+    "tqdm>=4.66",
+]
+
+[project.scripts]
+vonet-train = "vonet.train:main"
+vonet-benchmark = "vonet.benchmark:main"
+vonet-infer = "vonet.infer:main"
+
+[tool.setuptools.packages.find]
+include = ["vonet*"]
