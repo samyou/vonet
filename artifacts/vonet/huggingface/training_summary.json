@@ -1,0 +1,27 @@
+{
+  "source_checkpoint": "artifacts/vonet/best.pt",
+  "selected_epoch": 28,
+  "global_step": 7028,
+  "train_loss": 0.19462357157772475,
+  "train_accuracy": 0.9408091908091908,
+  "validation_loss": 0.17736441388938695,
+  "validation_accuracy": 0.9453778700046858,
+  "best_validation_accuracy": 0.9453778700046858,
+  "training_arguments": {
+    "data_root": "data",
+    "output_dir": "artifacts/vonet",
+    "epochs": 30,
+    "batch_size": 64,
+    "input_size": 227,
+    "lr": 0.001,
+    "weight_decay": 0.0005,
+    "momentum": 0.9,
+    "dropout": 0.5,
+    "num_workers": 4,
+    "train_ratio": 0.75,
+    "seed": 42,
+    "device": "auto",
+    "amp": false,
+    "resume": "artifacts/vonet/last.pt"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "architectures": [
+    "VoNetForImageClassification"
+  ],
+  "auto_map": {
+    "AutoConfig": "configuration_vonet.VoNetConfig",
+    "AutoModelForImageClassification": "modeling_vonet.VoNetForImageClassification"
+  },
+  "dropout": 0.5,
+  "id2label": {
+    "0": "front",
+    "1": "rear",
+    "2": "side",
+    "3": "front-side",
+    "4": "rear-side"
+  },
+  "input_size": 227,
+  "label2id": {
+    "front": 0,
+    "rear": 1,
+    "side": 2,
+    "front-side": 3,
+    "rear-side": 4
+  },
+  "model_type": "vonet",
+  "num_channels": 3,
+  "torch_dtype": "float32",
+  "transformers_version": "5.16.1"
+}
