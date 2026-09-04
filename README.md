@@ -101,6 +101,27 @@ uv run vonet-train \
   --num-workers 0
 ```
 
+## Export to Hugging Face
+
+Generate a Transformers-compatible model package from the best checkpoint:
+
+```bash
+uv run vonet-export-hf \
+  --checkpoint artifacts/vonet/best.pt \
+  --output-dir artifacts/vonet/huggingface \
+  --repo-id samyou/vonet-compcars
+```
+
+The export contains safetensors weights, model and preprocessing
+configuration, custom Transformers model code, training metadata, and a model
+card. Authenticate and upload the generated directory with:
+
+```bash
+hf auth login
+hf repos create samyou/vonet-compcars --type model --public --exist-ok
+hf upload samyou/vonet-compcars artifacts/vonet/huggingface .
+```
+
 ## Inference
 
 ```bash

@@ -11,7 +11,9 @@ license = { file = "LICENSE" }
 requires-python = ">=3.9"
 dependencies = [
     "numpy>=1.24",
+    "packaging>=24.0",
     "pillow>=10.0",
+    "safetensors>=0.4",
     "setuptools>=82.0.0",
     "torch>=2.2",
     "torchvision>=0.17",
@@ -21,6 +23,7 @@ dependencies = [
 [project.scripts]
 vonet-train = "vonet.train:main"
 vonet-benchmark = "vonet.benchmark:main"
+vonet-export-hf = "vonet.export_hf:main"
 vonet-infer = "vonet.infer:main"
 
 [tool.setuptools.packages.find]
